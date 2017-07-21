@@ -7,13 +7,18 @@ const logger = require('morgan');
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+// APP PARAMS
+const TodontsController = require('./controllers/todonts');
+
+
 // MIDDLEWARE
 app.use( logger('dev'));
 
 
 // VIEWS
 app.set('view engine', 'hbs');
-
+app.use('/todonts', TodontsController);
 
 
 
