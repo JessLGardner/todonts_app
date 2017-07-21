@@ -5,8 +5,13 @@
     <li>Description: <a href="/todonts/{{@index}}">{{description}}</a></li> 
     <li>Urgent: {{urgent}}</li>
     </br>
+    <form method="POST" action="/todonts/{{@index}}?_method=DELETE">
+    <button>DELETE</button>
+    </form>
+    </br>
 {{/each}}
 </ul>
+</br>
 
 <a href="/todonts/new">Create new To Don't</a>
 

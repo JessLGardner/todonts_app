@@ -3,6 +3,7 @@ const express = require('express');
 const hbs = require('hbs');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
 
 // APP SETTINGS
 const app = express();
@@ -18,6 +19,7 @@ app.use( logger('dev'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(methodOverride('_method'));
 
 
 // VIEWS
