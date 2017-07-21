@@ -2,11 +2,11 @@
 
 <ul>
 {{#each todonts}}
-    <li>Description:{{description}}</li> 
+    <li>Description: <a href="/todonts/{{@index}}">{{description}}</a></li> 
     <li>Urgent: {{urgent}}</li>
+    </br>
 {{/each}}
 </ul>
 
+<a href="/todonts/new">Create new To Don't</a>
 
-
-{{!-- <a href="/todonts/{{@index}}" --}}

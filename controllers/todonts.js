@@ -11,21 +11,34 @@ router.get('/', (req, res) =>{
 });
 
 
-
-
 // NEW
-
-
-
+router.get('/new', (req, res) => {
+    res.render('todonts/new');
+});
 
 
 // CREATE
+router.post('/', (req, res) => {
+   const newTodont = {
+    description: req.body.description,
+    urgent: req.body.urgent
+    };
 
-
+    data.seededToDonts.push(newTodont);  
+    res.redirect('todonts')
+});
 
 
 // SHOW
+router.get('/:id', (req, res) => {
+    const id = req.params.id;
+    const todonts = data.seededToDonts[id];
 
+    res.render('todonts/show', {
+        todonts: todonts,
+        id: id
+    });
+});
 
 
 
